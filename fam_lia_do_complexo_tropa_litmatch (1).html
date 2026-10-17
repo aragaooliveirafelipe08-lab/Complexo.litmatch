@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família do Complexo | Tropa Litmatch Nível 6</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        complex: {
+                            dark: '#0B0C10',
+                            card: '#1F2833',
+                            purple: '#A855F7',
+                            cyan: '#06B6D4',
+                            gold: '#F59E0B',
+                            silver: '#9CA3AF',
+                            bronze: '#D97706'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Neon & Glassmorphic Styles */
+        body {
+            background-color: #07080c;
+            color: #e2e8f0;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.8) 0%, transparent 100%);
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(18, 22, 34, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .text-glow-purple {
+            text-shadow: 0 0 12px rgba(168, 85, 247, 0.7), 0 0 24px rgba(168, 85, 247, 0.4);
+        }
+
+        .text-glow-gold {
+            text-shadow: 0 0 12px rgba(245, 158, 11, 0.8), 0 0 25px rgba(245, 158, 11, 0.5);
+        }
+
+        .text-glow-cyan {
+            text-shadow: 0 0 12px rgba(6, 182, 212, 0.7);
+        }
+
+        .neon-border-purple {
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+            border-color: rgba(168, 85, 247, 0.6);
+        }
+
+        .neon-border-gold {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+            border-color: rgba(245, 158, 11, 0.8);
+        }
+
+        .neon-border-cyan {
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+            border-color: rgba(6, 182, 212, 0.6);
+        }
+
+        /* Animated Progress Bar Gradient */
+        .animated-bar {
+            background: linear-gradient(90deg, #a855f7, #06b6d4, #f59e0b, #a855f7);
+            background-size: 300% 100%;
+            animation: gradientMove 4s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Pulse effects */
+        .crown-pulse {
+            animation: crownFloat 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes crownFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-8px) rotate(3deg); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0c10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-card border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo & Name -->
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-600 via-cyan-500 to-amber-400 p-0.5 shadow-lg shadow-purple-500/30 flex items-center justify-center">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid font-orbitron text-amber-400 text-xl font-black">FC</i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-orbitron font-extrabold text-lg sm:text-xl text-white tracking-wider">
+                        FAMÍLIA DO <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">COMPLEXO</span>
+                    </h1>
+                    <p class="text-xs text-slate-400 font-rajdhani font-semibold tracking-widest uppercase">Tropa Litmatch Oficial</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-6 font-rajdhani font-bold text-sm tracking-wider uppercase">
+                <a href="#level" class="text-slate-300 hover:text-purple-400 transition-colors">Nível</a>
+                <a href="#ranking" class="text-slate-300 hover:text-cyan-400 transition-colors">Top Doadores</a>
+                <a href="#galeria" class="text-slate-300 hover:text-amber-400 transition-colors">Galeria</a>
+                <a href="#discord" class="text-slate-300 hover:text-indigo-400 transition-colors">Discord</a>
+            </nav>
+
+            <!-- Quick Action Button -->
+            <a href="#discord" class="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-rajdhani font-bold px-4 py-2 rounded-lg shadow-md shadow-purple-900/50 transition-all transform hover:scale-105 flex items-center gap-2 text-sm">
+                <i class="fa-brands fa-discord text-lg"></i>
+                <span>Juntar-se</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 text-center max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-purple-500/30 text-purple-300 text-xs font-rajdhani font-bold uppercase tracking-widest mb-6 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+            Litmatch Official Squad
+        </div>
+        <h2 class="font-orbitron text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-wide uppercase leading-tight mb-4">
+            União, Respeito & <br class="hidden sm:block" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-amber-400 text-glow-purple">
+                Domínio Absoluto
+            </span>
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base mb-8">
+            Bem-vindo ao portal oficial da <span class="text-slate-200 font-semibold">Família do Complexo</span>. Aqui mantemos a chama da tropa acesa, subindo níveis no Litmatch com o apoio e envio de diamantes de todos os nossos brabos!
+        </p>
+
+        <!-- Quick Info Badges -->
+        <div class="flex flex-wrap justify-center gap-4 text-center font-rajdhani">
+            <div class="glass-card px-5 py-3 rounded-xl border border-slate-700/50 flex items-center gap-3">
+                <i class="fa-solid fa-shield-halved text-2xl text-purple-400"></i>
+                <div class="text-left">
+                    <p class="text-xs text-slate-400 uppercase">Status Tropa</p>
+                    <p class="font-bold text-white tracking-wider">ATIVO & RECRUTANDO</p>
+                </div>
+            </div>
+            <div class="glass-card px-5 py-3 rounded-xl border border-slate-700/50 flex items-center gap-3">
+                <i class="fa-solid fa-gem text-2xl text-cyan-400"></i>
+                <div class="text-left">
+                    <p class="text-xs text-slate-400 uppercase">Meta Diamantes</p>
+                    <p class="font-bold text-white tracking-wider">RUMO AO LVL 7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-20">
+
+        <!-- SECTION 1: TROOP LEVEL -->
+        <section id="level" class="scroll-mt-24">
+            <div class="text-center mb-8">
+                <h3 class="font-orbitron text-2xl sm:text-3xl font-bold text-white">
+                    <i class="fa-solid fa-bolt text-purple-400 mr-2"></i>NÍVEL DA TROPA
+                </h3>
+                <p class="text-slate-400 text-sm">Acompanhe a evolução da Família do Complexo no Litmatch</p>
+            </div>
+
+            <div class="glass-card p-6 sm:p-10 rounded-2xl border border-purple-500/30 neon-border-purple relative overflow-hidden">
+                <!-- Decorative background elements -->
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-10 -top-10 w-40 h-40 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8 mb-8">
+                    <!-- Current Level Badge -->
+                    <div class="flex items-center gap-6">
+                        <div class="relative">
+                            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-purple-600 via-indigo-600 to-cyan-500 p-1 flex items-center justify-center shadow-xl shadow-purple-900/50">
+                                <div class="w-full h-full bg-slate-950 rounded-[14px] flex flex-col items-center justify-center">
+                                    <span class="text-xs text-purple-400 font-rajdhani font-extrabold uppercase tracking-widest">NÍVEL</span>
+                                    <span class="text-4xl sm:text-5xl font-orbitron font-black text-white text-glow-purple">6</span>
+                                </div>
+                            </div>
+                            <span class="absolute -top-3 -right-3 bg-amber-500 text-slate-950 font-bold text-xs font-rajdhani px-2 py-0.5 rounded-full uppercase shadow">MAX EXP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-orbitron text-xl sm:text-2xl font-bold text-white mb-1">TROPA NÍVEL 6</h4>
+                            <p class="text-slate-300 text-sm max-w-md">Nossa tropa está fortalecida e a todo vapor. Contribua enviando diamantes durante as lives para subirmos ao próximo patamar!</p>
+                        </div>
+                    </div>
+
+                    <!-- Target Level Preview -->
+                    <div class="flex items-center gap-4 bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+                        <div class="text-right">
+                            <p class="text-xs text-slate-400 font-rajdhani font-semibold uppercase">PRÓXIMO OBJETIVO</p>
+                            <p class="font-orbitron font-bold text-amber-400 text-lg">NÍVEL 7</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-orbitron font-black text-xl">
+                            7
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar Container -->
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm font-rajdhani font-bold">
+                        <span class="text-purple-300 tracking-wider">PROGRESSO DE EXPERIÊNCIA</span>
+                        <span class="text-cyan-400 font-orbitron">78.500 / 100.000 EXP (78.5%)</span>
+                    </div>
+
+                    <!-- Outer Progress Bar -->
+                    <div class="w-full h-6 bg-slate-900 rounded-full p-1 border border-slate-700/60 shadow-inner relative overflow-hidden">
+                        <div class="animated-bar h-full rounded-full transition-all duration-1000 shadow-md shadow-purple-500/50" style="width: 78.5%;"></div>
+                    </div>
+
+                    <div class="flex justify-between items-center text-xs text-slate-400 font-rajdhani font-semibold">
+                        <span><i class="fa-solid fa-gem text-cyan-400 mr-1"></i> Falta apenas 21.500 diamantes para subir!</span>
+                        <span>Meta semanal: 85% concluída</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: TOP DIAMOND DONORS (TOP 1 - TOP 9) -->
+        <section id="ranking" class="scroll-mt-24">
+            <div class="text-center mb-10">
+                <div class="inline-block p-2 px-4 rounded-full bg-amber-500/10 border border-amber-500/30 mb-3">
+                    <span class="font-orbitron text-xs font-bold text-amber-400 uppercase tracking-widest"><i class="fa-solid fa-trophy mr-2"></i>Hall da Fama</span>
+                </div>
+                <h3 class="font-orbitron text-2xl sm:text-4xl font-black text-white">TOP DOADORES DE DIAMANTES</h3>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto mt-1">Membros que estão carregando a tropa e fazendo a Família do Complexo subir de nível no Litmatch!</p>
+            </div>
+
+            <!-- PODIUM (TOP 1, 2, 3) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 items-end">
+                
+                <!-- TOP 2 - SILVER -->
+                <div class="order-2 md:order-1 glass-card p-6 rounded-2xl border border-slate-400/40 text-center relative transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-slate-800 text-slate-300 border border-slate-500 font-orbitron font-bold px-4 py-1 rounded-full text-xs flex items-center gap-1 shadow-lg">
+                        <i class="fa-solid fa-medal text-slate-300"></i> TOP 2
+                    </div>
+                    <div class="mt-2 mb-4 relative inline-block">
+                        <div class="w-20 h-20 mx-auto rounded-full p-1 bg-gradient-to-tr from-slate-400 to-slate-100 shadow-lg shadow-slate-500/20">
+                            <img src="cpx.jpeg" alt="Avatar Top 2" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="absolute bottom-0 right-0 bg-slate-700 border border-slate-400 text-white font-orbitron text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold">2</span>
+                    </div>
+                    <h4 class="font-orbitron font-bold text-white text-lg">Complexo</h4>
+                    <p class="text-xs text-slate-400 font-rajdhani font-semibold mb-3">Sub-Líder</p>
+                    <div class="bg-slate-900/80 rounded-xl p-3 border border-slate-800 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-gem text-cyan-400 text-lg"></i>
+                        <span class="font-orbitron font-bold text-slate-200 text-lg">0</span>
+                    </div>
+                </div>
+
+                <!-- TOP 1 - GOLD (CENTER, LARGER) -->
+                <div class="order-1 md:order-2 glass-card p-8 rounded-2xl border border-amber-500/60 text-center relative transform hover:-translate-y-2 transition-transform duration-300 neon-border-gold bg-gradient-to-b from-amber-500/10 via-slate-900/80 to-slate-950">
+                    <div class="crown-pulse absolute -top-8 left-1/2 -translate-x-1/2">
+                        <i class="fa-solid fa-crown text-amber-400 text-4xl text-glow-gold"></i>
+                    </div>
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-yellow-300 text-slate-950 font-orbitron font-black px-5 py-1 rounded-full text-xs shadow-xl tracking-wider">
+                        TOP 1 BRABO
+                    </div>
+                    <div class="mt-4 mb-4 relative inline-block">
+                        <div class="w-28 h-28 mx-auto rounded-full p-1.5 bg-gradient-to-tr from-amber-500 via-yellow-300 to-amber-600 shadow-xl shadow-amber-500/30">
+                            <img src="cpx.jpeg" alt="Avatar Top 1" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="absolute bottom-1 right-1 bg-amber-500 text-slate-950 font-orbitron text-sm w-7 h-7 rounded-full flex items-center justify-center font-black shadow-md">1</span>
+                    </div>
+                    <h4 class="font-orbitron font-black text-amber-400 text-xl text-glow-gold">Das Trevas</h4>
+                    <p class="text-xs text-amber-300/80 font-rajdhani font-semibold mb-4 uppercase tracking-widest">Líder Supremo</p>
+                    <div class="bg-slate-950 rounded-xl p-3 border border-amber-500/40 flex items-center justify-center gap-2 shadow-inner">
+                        <i class="fa-solid fa-gem text-cyan-400 text-xl animate-pulse"></i>
+                        <span class="font-orbitron font-black text-amber-400 text-2xl text-glow-gold">0</span>
+                    </div>
+                </div>
+
+                <!-- TOP 3 - BRONZE -->
+                <div class="order-3 glass-card p-6 rounded-2xl border border-amber-700/40 text-center relative transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-slate-800 text-amber-600 border border-amber-700 font-orbitron font-bold px-4 py-1 rounded-full text-xs flex items-center gap-1 shadow-lg">
+                        <i class="fa-solid fa-medal text-amber-600"></i> TOP 3
+                    </div>
+                    <div class="mt-2 mb-4 relative inline-block">
+                        <div class="w-20 h-20 mx-auto rounded-full p-1 bg-gradient-to-tr from-amber-700 to-amber-500 shadow-lg shadow-amber-900/30">
+                            <img src="cpx.jpeg" alt="Avatar Top 3" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="absolute bottom-0 right-0 bg-amber-800 text-white font-orbitron text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold">3</span>
+                    </div>
+                    <h4 class="font-orbitron font-bold text-white text-lg">coffMAFIA</h4>
+                    <p class="text-xs text-slate-400 font-rajdhani font-semibold mb-3">Gerente da Tropa</p>
+                    <div class="bg-slate-900/80 rounded-xl p-3 border border-slate-800 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-gem text-cyan-400 text-lg"></i>
+                        <span class="font-orbitron font-bold text-slate-200 text-lg">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLE / LIST FOR TOP 4 TO TOP 9 -->
+            <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden shadow-xl">
+                <div class="p-4 sm:p-6 bg-slate-900/80 border-b border-slate-800 flex justify-between items-center">
+                    <h4 class="font-orbitron font-bold text-white text-sm sm:text-base flex items-center gap-2">
+                        <i class="fa-solid fa-list-ol text-cyan-400"></i> CONTINUAÇÃO DO RANKING (TOP 4 - TOP 9)
+                    </h4>
+                    <span class="text-xs text-slate-400 font-rajdhani font-semibold">Atualizado diariamente</span>
+                </div>
+
+                <div class="divide-y divide-slate-800/60">
+                    <!-- TOP 4 -->
+                    <div class="p-4 sm:px-6 flex items-center justify-between hover:bg-slate-800/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="font-orbitron font-bold text-slate-400 w-6 text-center text-sm">#4</span>
+                            <div class="w-10 h-10 rounded-full bg-slate-800 p-0.5 border border-slate-700">
+                                <img src="cpx.jpeg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <div>
+                                <h5 class="font-orbitron font-semibold text-white text-sm">Morena</h5>
+                                <p class="text-xs text-slate-400">Membro Elite</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                            <span class="font-orbitron font-bold text-slate-200 text-sm">0</span>
+                        </div>
+                    </div>
+
+                    <!-- TOP 5 -->
+                    <div class="p-4 sm:px-6 flex items-center justify-between hover:bg-slate-800/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="font-orbitron font-bold text-slate-400 w-6 text-center text-sm">#5</span>
+                            <div class="w-10 h-10 rounded-full bg-slate-800 p-0.5 border border-slate-700">
+                                <img src="cpx.jpeg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <div>
+                                <h5 class="font-orbitron font-semibold text-white text-sm">Complexo</h5>
+                                <p class="text-xs text-slate-400">Membro VIP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                            <span class="font-orbitron font-bold text-slate-200 text-sm">0</span>
+                        </div>
+                    </div>
+
+                    <!-- TOP 6 -->
+                    <div class="p-4 sm:px-6 flex items-center justify-between hover:bg-slate-800/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="font-orbitron font-bold text-slate-400 w-6 text-center text-sm">#6</span>
+                            <div class="w-10 h-10 rounded-full bg-slate-800 p-0.5 border border-slate-700">
+                                <img src="cpx.jpeg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <div>
+                                <h5 class="font-orbitron font-semibold text-white text-sm">Complexo</h5>
+                                <p class="text-xs text-slate-400">Membro VIP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                            <span class="font-orbitron font-bold text-slate-200 text-sm">0</span>
+                        </div>
+                    </div>
+
+                    <!-- TOP 7 -->
+                    <div class="p-4 sm:px-6 flex items-center justify-between hover:bg-slate-800/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="font-orbitron font-bold text-slate-400 w-6 text-center text-sm">#7</span>
+                            <div class="w-10 h-10 rounded-full bg-slate-800 p-0.5 border border-slate-700">
+                                <img src="cpx.jpeg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <div>
+                                <h5 class="font-orbitron font-semibold text-white text-sm">Complexo</h5>
+                                <p class="text-xs text-slate-400">Membro Colaborador</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                            <span class="font-orbitron font-bold text-slate-200 text-sm">0</span>
+                        </div>
+                    </div>
+
+                    <!-- TOP 8 -->
+                    <div class="p-4 sm:px-6 flex items-center justify-between hover:bg-slate-800/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="font-orbitron font-bold text-slate-400 w-6 text-center text-sm">#8</span>
+                            <div class="w-10 h-10 rounded-full bg-slate-800 p-0.5 border border-slate-700">
+                                <img src="cpx.jpeg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <div>
+                                <h5 class="font-orbitron font-semibold text-white text-sm">Complexo</h5>
+                                <p class="text-xs text-slate-400">Membro Colaborador</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                            <span class="font-orbitron font-bold text-slate-200 text-sm">o</span>
+                        </div>
+                    </div>
+
+                    <!-- TOP 9 -->
+                    <div class="p-4 sm:px-6 flex items-center justify-between hover:bg-slate-800/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="font-orbitron font-bold text-slate-400 w-6 text-center text-sm">#9</span>
+                            <div class="w-10 h-10 rounded-full bg-slate-800 p-0.5 border border-slate-700">
+                                <img src="cpx.jpeg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <div>
+                                <h5 class="font-orbitron font-semibold text-white text-sm">Complexo</h5>
+                                <p class="text-xs text-slate-400">Membro Novato Pro</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800">
+                            <i class="fa-solid fa-gem text-cyan-400 text-xs"></i>
+                            <span class="font-orbitron font-bold text-slate-200 text-sm">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: GALLERY -->
+        <section id="galeria" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <h3 class="font-orbitron text-2xl sm:text-3xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-camera-retro text-amber-400"></i> GALERIA DA TROPA
+                    </h3>
+                    <p class="text-slate-400 text-sm">Momentos marcantes, calls, eventos e festas no Litmatch</p>
+                </div>
+                
+                <button onclick="openUploadModal()" class="self-start md:self-auto bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-cyan-500/40 font-rajdhani font-bold px-4 py-2 rounded-xl transition-all flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Enviar Foto</span>
+                </button>
+            </div>
+
+            <!-- Grid Gallery -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+                
+                <!-- Photo Card 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 group hover:border-purple-500/50 transition-all duration-300 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80', 'Event de Formação de Call - Sexta Neon')">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="cpx.jpeg" alt="Evento Tropa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-3 right-3 bg-purple-900/80 text-purple-200 text-xs font-rajdhani font-bold px-2.5 py-1 rounded-full border border-purple-500/40">Festa Litmatch</span>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-orbitron font-bold text-white text-base mb-1">Call da Virada do Nível 6</h5>
+                        <p class="text-xs text-slate-400">Registrado durante a comemoração do subida de level com toda a tropa reunida.</p>
+                    </div>
+                </div>
+
+                <!-- Photo Card 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 group hover:border-cyan-500/50 transition-all duration-300 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80', 'Game Night da Família')">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="cpx.jpeg" alt="Game Night" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-3 right-3 bg-cyan-900/80 text-cyan-200 text-xs font-rajdhani font-bold px-2.5 py-1 rounded-full border border-cyan-500/40">Eventos</span>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-orbitron font-bold text-white text-base mb-1">Game Night no Discord</h5>
+                        <p class="text-xs text-slate-400">Torneio interno entre os membros da Família do Complexo.</p>
+                    </div>
+                </div>
+
+                <!-- Photo Card 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 group hover:border-amber-500/50 transition-all duration-300 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80', 'Roda de Conversa e Músicas')">
+                    <div class="relative overflow-hidden h-52">
+                        <img src="cpx.jpeg" alt="Sala de Voz" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                        <span class="absolute top-3 right-3 bg-amber-900/80 text-amber-200 text-xs font-rajdhani font-bold px-2.5 py-1 rounded-full border border-amber-500/40">Voz & Som</span>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-orbitron font-bold text-white text-base mb-1">Super Live de Diamantes</h5>
+                        <p class="text-xs text-slate-400">Recorde de presentes e meta batida em menos de 2 horas!</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 4: DISCORD & COMMUNITY -->
+        <section id="discord" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl border border-indigo-500/30 overflow-hidden relative p-6 sm:p-10 lg:p-12">
+                <!-- Background ambient glow -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Left Column: Details -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-rajdhani font-bold uppercase tracking-wider">
+                            <i class="fa-brands fa-discord text-sm"></i> Comunidade Oficial
+                        </div>
+
+                        <h3 class="font-orbitron text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+                            ENTRE NO NOSSO <br />
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
+                                SERVER DO DISCORD
+                            </span>
+                        </h3>
+
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Quer fazer parte das nossas calls de Litmatch, participar dos sorteios de presentes e garantir sua vaga na Família do Complexo? Venha para o nosso servidor oficial!
+                        </p>
+
+                        <!-- Quick Server Stats -->
+                        <div class="grid grid-cols-3 gap-4 py-2 border-y border-slate-800">
+                            <div>
+                                <p class="text-xs text-slate-400 font-rajdhani font-semibold uppercase">Membros</p>
+                                <p class="font-orbitron font-bold text-white text-lg sm:text-xl">450+</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-rajdhani font-semibold uppercase">Online Agora</p>
+                                <p class="font-orbitron font-bold text-green-400 text-lg sm:text-xl flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> 128
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-rajdhani font-semibold uppercase">Calls Ativas</p>
+                                <p class="font-orbitron font-bold text-indigo-400 text-lg sm:text-xl">24/7</p>
+                            </div>
+                        </div>
+
+                        <!-- Discord Join Button -->
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <a href="https://discord.gg/ztthPJXRG" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white font-orbitron font-bold px-8 py-4 rounded-xl shadow-lg shadow-indigo-900/50 transition-all transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-discord text-2xl"></i>
+                                <span>ENTRAR NO DISCORD</span>
+                            </a>
+                            <button onclick="copyDiscordLink()" class="bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 font-rajdhani font-bold px-6 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-solid fa-copy"></i>
+                                <span id="copyBtnText">Copiar Link</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Rules / Info Card -->
+                    <div class="lg:col-span-5 bg-slate-950/70 rounded-2xl p-6 border border-slate-800 space-y-4">
+                        <h4 class="font-orbitron font-bold text-white text-base flex items-center gap-2">
+                            <i class="fa-solid fa-scroll text-amber-400"></i> REGRAS RÁPIDAS DA TROPA
+                        </h4>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-purple-400 mt-1"></i>
+                                <span><strong>Respeito Mútuo:</strong> Sem preconceito, brigas ou desrespeito com membros.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-purple-400 mt-1"></i>
+                                <span><strong>Ajuda na Tropa:</strong> Doar diamantes sempre que possível para manter o nível subindo.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-purple-400 mt-1"></i>
+                                <span><strong>Presença em Calls:</strong> Interagir nas salas de voz do Litmatch/Discord fortalece a união.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-purple-400 mt-1"></i>
+                                <span><strong>Tag no Perfil:</strong> Usar a tag <code class="bg-slate-800 text-amber-400 px-1.5 py-0.5 rounded font-mono">[FC]</code> no Litmatch é recomendado.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 border-t border-slate-800 glass-card py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-orbitron font-bold text-white text-sm">
+                    FAMÍLIA DO <span class="text-purple-400">COMPLEXO</span>
+                </p>
+                <p class="text-xs text-slate-500 font-rajdhani font-medium mt-0.5">
+                    Tropa Oficial no Litmatch - Todos os direitos reservados © 2026
+                </p>
+            </div>
+
+            <div class="flex items-center gap-4 text-slate-400 text-lg">
+                <a href="https://discord.gg/ztthPJXRG" target="_blank" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="hover:text-cyan-400 transition-colors"><i class="fa-solid fa-fire"></i></a>
+                <a href="#" class="hover:text-amber-400 transition-colors"><i class="fa-solid fa-gem"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR GALLERY -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-md" onclick="closeLightbox()">
+        <div class="relative max-w-4xl w-full glass-card rounded-2xl overflow-hidden p-2" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 bg-slate-900/80 text-white w-10 h-10 rounded-full flex items-center justify-center border border-slate-700 hover:bg-red-600 transition-colors z-10">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <img id="lightboxImg" src="" alt="Imagem Ampliada" class="w-full max-h-[75vh] object-contain rounded-xl">
+            <p id="lightboxCaption" class="font-orbitron text-center text-white text-sm p-4"></p>
+        </div>
+    </div>
+
+    <!-- UPLOAD MODAL SIMULATION -->
+    <div id="uploadModal" class="fixed inset-0 z-50 bg-black/80 hidden items-center justify-center p-4 backdrop-blur-sm" onclick="closeUploadModal()">
+        <div class="glass-card max-w-md w-full rounded-2xl p-6 border border-slate-700 relative" onclick="event.stopPropagation()">
+            <h4 class="font-orbitron font-bold text-white text-lg mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-upload text-cyan-400"></i> Enviar Foto da Tropa
+            </h4>
+            <p class="text-slate-400 text-xs mb-4">Adicione momentos marcantes da Família do Complexo à galeria.</p>
+
+            <form onsubmit="handleUpload(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-rajdhani font-bold text-slate-300 uppercase mb-1">Título da Foto</label>
+                    <input type="text" id="photoTitle" required placeholder="Ex: Call Especial de Domingo" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white text-sm focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-rajdhani font-bold text-slate-300 uppercase mb-1">URL da Imagem</label>
+                    <input type="url" id="photoUrl" required placeholder="https://exemplo.com/sua-foto.jpg" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white text-sm focus:outline-none focus:border-purple-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-rajdhani font-bold text-slate-300 uppercase mb-1">Categoria / Tag</label>
+                    <select id="photoTag" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white text-sm focus:outline-none focus:border-purple-500">
+                        <option value="Evento">Evento Litmatch</option>
+                        <option value="Game Night">Game Night</option>
+                        <option value="Call">Call em Grupo</option>
+                        <option value="Meta">Meta de Diamantes</option>
+                    </select>
+                </div>
+
+                <div class="flex gap-3 pt-2">
+                    <button type="button" onclick="closeUploadModal()" class="w-1/2 bg-slate-800 hover:bg-slate-700 text-slate-300 font-rajdhani font-bold py-2.5 rounded-xl text-sm">Cancelar</button>
+                    <button type="submit" class="w-1/2 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-rajdhani font-bold py-2.5 rounded-xl text-sm">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Lightbox Functions
+        function openLightbox(src, caption) {
+            const modal = document.getElementById('lightbox');
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').innerText = caption;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Upload Modal Functions
+        function openUploadModal() {
+            const modal = document.getElementById('uploadModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeUploadModal() {
+            const modal = document.getElementById('uploadModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleUpload(e) {
+            e.preventDefault();
+            const title = document.getElementById('photoTitle').value;
+            const url = document.getElementById('photoUrl').value;
+            const tag = document.getElementById('photoTag').value;
+
+            const grid = document.getElementById('galleryGrid');
+
+            const card = document.createElement('div');
+            card.className = "glass-card rounded-2xl overflow-hidden border border-slate-800 group hover:border-purple-500/50 transition-all duration-300 cursor-pointer";
+            card.onclick = function() { openLightbox(url, title); };
+
+            card.innerHTML = `
+                <div class="relative overflow-hidden h-52">
+                    <img src="${url}" alt="${title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                    <span class="absolute top-3 right-3 bg-purple-900/80 text-purple-200 text-xs font-rajdhani font-bold px-2.5 py-1 rounded-full border border-purple-500/40">${tag}</span>
+                </div>
+                <div class="p-4">
+                    <h5 class="font-orbitron font-bold text-white text-base mb-1">${title}</h5>
+                    <p class="text-xs text-slate-400">Adicionado recentemente pela comunidade.</p>
+                </div>
+            `;
+
+            grid.prepend(card);
+            closeUploadModal();
+            
+            // Clear form
+            document.getElementById('photoTitle').value = '';
+            document.getElementById('photoUrl').value = '';
+        }
+
+        // Copy Discord Link Helper
+        function copyDiscordLink() {
+            const discordUrl = 'https://discord.gg/ztthPJXRG';
+            
+            // Use execCommand for iframe compatibility
+            const tempInput = document.createElement('input');
+            tempInput.value = discordUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const btnText = document.getElementById('copyBtnText');
+            const originalText = btnText.innerText;
+            btnText.innerText = 'Copiado!';
+            setTimeout(() => {
+                btnText.innerText = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
